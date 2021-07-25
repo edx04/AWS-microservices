@@ -23,7 +23,7 @@ install:
   - docker tag udagram-api-feed edx04/backend_feed:v1
   - docker tag udagram-api-user edx04/backend_user:v1
   - docker tag udagram-frontend edx04/frontend:v1
-  - docker tag udagram-reverseproxy edx04/reverseproxy:v1
+  - docker tag reverseproxy edx04/reverseproxy:v1
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
