@@ -20,15 +20,15 @@ before_install:
 
 install:
   - docker-compose -f docker-compose-build.yaml build 
-  - docker tag udagram-api-feed edx04/backend_feed:v1
-  - docker tag udagram-api-user edx04/backend_user:v1
-  - docker tag udagram-frontend edx04/frontend:v1
-  - docker tag reverseproxy edx04/reverseproxy:v1
+  - docker tag udagram-api-feed edx04/backend_feed:v2
+  - docker tag udagram-api-user edx04/backend_user:v2
+  - docker tag udagram-frontend edx04/frontend:v2
+  - docker tag reverseproxy edx04/reverseproxy:v2
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push edx04/backend_feed:v1
-  - docker push edx04/backend_user:v1
-  - docker push edx04/frontend:v1
-  - docker push edx04/reverseproxy:v1
+  - docker push edx04/backend_feed:v2
+  - docker push edx04/backend_user:v2
+  - docker push edx04/frontend:v2
+  - docker push edx04/reverseproxy:v2
   
